@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='./libs/bootstrap/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='./libs/boxicons/css/boxicons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='./libs/icons/css/uicons-regular-rounded.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/style.css') }}">
+    <meta name="msapplication-TileColor" content="#ff9100fb">
+    <meta name="theme-color" content="#ff9100fb">
+    <link rel="mask-icon" href="./256x256.ico" color="#ff9100fb">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div>
+            <i>=</i>
+        </div>
+        <div class="campoBusca">
+            <input type="text" id="txt_busca" placeholder="Pesquisar cartão" oninput="ft_cards(this.value)">
+            <i class="fi-rr-search"></i>
+        </div>
+        <div style="display: flex;align-items: center;justify-content: center;">
+            <h3 class="user" onclick="ft_profile()">WA</h3>
+        </div>
+    </header>
+
+    <div class="campoUser">
+        <div class="sub-user">
+            <h3 class="user">WA</h3>
+            <span>{{user.username}}</span>
+            <a href="/logout">Terminar sessao</a>
+        </div>
+    </div>
+
+    <div class="tabContainer" onclick="ft_focus_desative()" onscroll="ft_focus_desative()">
+        <div class="tabPanel">
+            <section>
+                <div class="grid justify-content-md-center list-cards"></div>
+            </section>
+        </div>
+        <div class="tabPanel vendas">
+            <div class="modalCard">
+                <div>
+                    <h2 id="titulo_cliente">MATA SEDE</h2>
+                    <h1 id="preco_cliente">500 kz</h1>
+                    <div class="quadros row justify-content-md-center" style="margin-bottom: 20px;"></div>
+
+
+                    <span style="color: #a29e9e;" id="nome_cliente">Nome do cliente</span><br>
+                    <button class="btn_concluir" onclick="concluir()">Concluir venda</button>
+
+                    <div style="position: absolute;bottom: 3%;color: orange;">
+                        <span id="resp_cliente" hidden>titlo</span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h1>CARTÃO DE CONSUMO</h1>
+                <input type="text" id="codigo" placeholder="ID MATA SEDE" disabled>
+            </div>
+            <div class="keyboard row">
+                <button onclick="dataCart(document.getElementById('codigo').value)" style="width: 90%;background-color: green;color: white;font-size: 13pt;padding: 5px;height: 40px;border-radius: 4px;">
+                    Carregar cartão
+                </button>
+                <div class="col">
+                    <button onclick="insertValue(8)">8</button>
+                    <button onclick="insertValue(9)">9</button>
+                    <button onclick="deleter()">CE</button>
+                    <button onclick="limpar()"><i class='bx bxs-tag-x'></i></button>
+                </div>
+                <div class="col">
+                    <button onclick="insertValue(4)">4</button>
+                    <button onclick="insertValue(5)">5</button>
+                    <button onclick="insertValue(6)">6</button>
+                    <button onclick="insertValue(7)">7</button>
+                </div>
+                <div class="col">
+                    <button onclick="insertValue(0)">0</button>
+                    <button onclick="insertValue(1)">1</button>
+                    <button onclick="insertValue(2)">2</button>
+                    <button onclick="insertValue(3)">3</button>
+                </div>
+            </div>
+        </div>
+        <div class="tabPanel">
+            <h1>Pagina 3</h1>
+        </div>
+        <div class="tabPanel">
+            <h1>Pagina 4</h1>
+        </div>
+
+        <footer class="buttonContainer">
+            <button onclick="showPanel(0,'#efefef')">
+                <i class="fi-rr-credit-card"></i>
+                <span>Card</span>
+            </button >
+            <button onclick="showPanel(1,'#efefef')">
+                <i class="fi-rr-shopping-cart-add"></i>
+                <span>venda</span>
+            </button>
+            <button onclick="showPanel(2,'#efefef')">
+                <i class="fi-rr-layers"></i>
+                <span>Total</span>
+            </button>
+            <button onclick="showPanel(3,'#efefef')">
+                <i class=" fi-rr-laptop-mobile"></i>
+                <span>Servidor</span>
+            </button>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('script')}}"></script>
+    <script src="{{ url_for('easyTabs')}}"></script>
+</body>
+
+</html>

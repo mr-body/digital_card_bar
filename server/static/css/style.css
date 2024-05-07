@@ -1,0 +1,396 @@
+body{
+    height: 100vh;
+    overflow: hidden;
+    contain: content;
+    background-color: #efefef;
+}
+body > header {
+    background-color: #ff9100fb;
+    color: white;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    justify-content: space-around;
+}
+
+.campoBusca{
+    background-color: rgba(255, 166, 0, 0.859);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 70%;
+    border-radius: 5px;
+    color: white;
+}
+
+.campoBusca input{
+    border: none;
+    width: 80%;
+    padding: 6px;
+    outline: none;
+    color: white;
+    font-size: 9pt;
+    background-color: transparent;
+}
+
+.campoBusca i{
+    position: absolute;
+    font-size: 7pt;
+    right: 5%;
+    color: rgb(112, 74, 3);
+    font-weight: 600;
+}
+
+.sub-user {
+    position: absolute;
+    top: 0;
+    margin-top: 44px;
+    width: 200px;
+    height: 150px;
+    background-color: #e6dac9b3;
+    backdrop-filter: blur(15px);
+    right: 1%;
+    display: flex;
+    color: orange;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    z-index: 3;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateX(200px);
+}
+
+.show_user{
+    opacity: 100%;
+    transform: none
+}
+
+.campoUser{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user{
+    position: absolute;
+    margin-top: 8px;
+    margin-right: 9px;
+    background-color: white;
+    color: orange;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 7pt;
+    justify-content: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.user:active{
+    transform: scale(115%);
+}
+
+.sub-user .user
+{
+    position: relative;
+    font-weight: 400;
+    width: 50px;
+    height: 50px;
+    font-size: 12pt;
+    border: 2px solid rgba(231, 153, 7, 0.226);
+}
+
+.sub-user a{
+    margin-top: 7px;
+    text-decoration: none;
+    color: rgb(163, 85, 6);
+    font-size: 8pt;
+    padding: 4px 10px 4px 10px;
+    border-radius: 2px;
+    background-color: rgba(255, 166, 0, 0.408);
+}
+.sub-user a:hover{
+    background-color: orange;
+}
+
+.grid {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap; 
+    margin-top: calc(-1* var(--bs-gutter-y));
+    margin-right: calc(-.5* var(--bs-gutter-x));
+}
+
+.list-cards{
+    width: 100%;
+    max-height: calc(100vh - 40px - 55px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 30px;
+}
+
+.list-cards div{
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+.list-cards .card{
+    height: 150px;
+    width: 600px;
+    background-color: rgb(255, 255, 255);
+    background-image: url('../img/000\ \(2\).png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 1px solid #ddd;
+    margin: 7px;
+    padding: 10px;
+    color: rgb(4, 3, 1);
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.list-cards .card header{
+    text-align: center;
+    font-weight: 900;
+    width: 50%;
+    text-align: center; 
+    border-bottom: 1px solid #dddddda8;
+    text-transform: uppercase;
+}
+
+.list-cards .card #id{
+    font-size: 24pt;
+    color: #ddd;
+    position: absolute;
+    left: 4%;
+    top: 2%;
+    font-weight: 600;
+}
+
+.list-cards .card #preco{
+    position: absolute;
+    right: 4%;
+    bottom: 4%;
+    color: rgb(40,40,40);
+    transform: rotate(-5deg);
+}
+
+.list-cards .card #status{
+    position: absolute;
+    left: 4%;
+    bottom: 6%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.list-cards .card #descrition{
+    position: absolute;
+    width: 95%;
+    color: #c4c3c3;
+    text-align: center;
+    font-size: 5pt;
+    text-transform: capitalize;
+    bottom: 3%;
+}
+
+.list-cards .card #cliente{
+    position: absolute;
+    width: 70%;
+    color: #6d6a6a;
+    background: #fafafae0;
+    text-align: center;
+    font-size: 5pt;
+    border: 1px solid #dddddd28;
+    padding: 1px 4px 1px 4px;
+    text-transform: capitalize;
+    border-radius: 1px;
+    bottom: 18%;
+}
+
+.vendas{
+    height: calc(100vh - 40px - 40px - 10px);
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    padding-top: 40%;
+    position: relative;
+    contain: content;
+}
+
+.vendas h1{
+    font-weight: 600;
+    color: orange;
+    margin-bottom: 30px;
+}
+
+.vendas input{
+    padding: 20px;
+    border: none;
+    font-size: 20pt;
+    font-weight: 500;
+    text-align: center;
+    background-color: transparent;
+    border-radius: 6px;
+}
+
+
+.vendas .keyboard{
+    position: absolute;
+    left: 10px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fbfbfbe8;
+    padding: 8px;
+    bottom: 0;
+}
+
+.vendas .keyboard .col{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vendas .keyboard button{
+    border: none;
+    border-radius: 6px;
+    background-color: orange;
+    width: 50px;
+    font-size: 10pt;
+    height: 50px;
+    padding: 10px;
+    margin: 9px;
+    transition: 0.2s;
+}
+
+.vendas .keyboard button:hover{
+    background-color: rgb(212, 139, 3);
+    transform: scale(110%);
+}
+
+.vendas .keyboard button:active{
+    transform: scale(95%);
+}
+
+.modalCard{
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: rgb(0, 0, 0);
+    background-color: white;
+}
+
+.modalCard {
+    padding: 30px;
+    transition: 0.2s;
+    opacity: 0%;
+    transform: translateY(-100%);
+}
+
+.showModal{
+    opacity: 100%;
+    transform: none;
+}
+
+.btn_concluir{
+    border: none;
+    font-size: 17px;
+    margin-top: 20px;
+    padding: 15px 30px 15px 30px;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+}
+
+.btn_concluir:hover{
+    background-color: rgb(1, 97, 1);
+}
+
+.modalCard .quadros{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalCard .quadros .quadro{
+    width: 80px;
+    height: 80px;
+    color: orange;
+    font-size: 35px;
+    font-weight: 900;
+    border-radius: 4px;
+    margin: 6px;
+    border: 2px solid orange;
+    position: relative;
+    contain: content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalCard .quadros .checked:hover::after{
+    content: 'X';
+    font-size: 35px;
+    font-weight: 600;
+    color: rgba(241, 164, 21, 0.164);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+footer{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    height: 55px;
+    background-color: rgba(255, 255, 255, 0.764);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-top: 1px solid #ddddddc1;
+}
+
+footer button{
+    border: none;
+    width: 60px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.764);
+    border-radius: 5px;
+}
+
+footer button i{
+    margin-top: 1px;
+}
+
+footer button span{
+    position: absolute;
+    font-size: 5pt;
+    bottom: 15%;
+}
